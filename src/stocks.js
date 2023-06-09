@@ -22,12 +22,14 @@ export async function addStock(req, res) {
   res.status(201).send({ message: "New stock added to stocks" });
 }
 
+
 // CRUD DELETE
 export async function deleteStock(req, res) {
   const docId = new ObjectId(req.params.docId);
   await coll.deleteOne({ _id: docId });
   res.status(201).send({ message: "Stock has been deleted" });
 }
+
 
 export async function updateStock(req, res) {
   const docId = new ObjectId(req.params.docId);
